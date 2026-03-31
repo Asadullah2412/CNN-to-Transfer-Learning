@@ -65,7 +65,7 @@ No “accuracy-only” thinking.
 
 Confusion Matrix:
 
-![](image.png)
+![image](image.png)
 
 ### 🔥 Key takeaway
 >
