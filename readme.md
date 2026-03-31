@@ -12,6 +12,8 @@ Chest X‑ray images (anterior‑posterior) of pediatric patients used to detect
 
 Original citation
 Kermany, D., et al., Cell 2018. Figure S6 and dataset referenced in the Cell paper. Data mirror: Mendeley
+
+*Kaggle link* -> [dataset link](https://www.kaggle.com/datasets/yusufmurtaza01/chest-xray-pneumonia-balanced-dataset/data)
 ---
 
 ## ⚡ What this project actually does
