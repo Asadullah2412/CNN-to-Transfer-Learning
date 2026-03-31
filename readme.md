@@ -115,40 +115,18 @@ git clone https://github.com/your-username/pneumonia-detection.git
 cd pneumonia-detection
 pip install -r requirements.txt
 streamlit run app.py
+```
 
+## 🧪 Evaluation Strategy
 
-🧪 Evaluation Strategy
+### Metrics used
 
-Metrics used:
-
-Accuracy (baseline reference)
-Precision (false alarms)
-Recall (priority metric)
-F1-score (balance)
-ROC-AUC (separability)
-Confusion Matrix (error visibility)
-Core principle:
+    Accuracy (baseline reference)
+    Precision (false alarms)
+    Recall (priority metric)
+    F1-score (balance)
+    ROC-AUC (separability)
+    Confusion Matrix (error visibility)
+    Core principle:
 
 “If you miss pneumonia, the model has failed — regardless of accuracy.”
-
-🧠 What I learned
-Simple models can outperform complex ones
-Evaluation > architecture hype
-Class imbalance changes everything
-Recall matters more than accuracy in critical systems
-🔮 Next Steps
-Transfer Learning (ResNet / EfficientNet)
-Grad-CAM for explainability
-Threshold tuning for precision-recall tradeoff
-Larger dataset validation
-👀 If you’re reviewing this
-
-Don’t just look at accuracy.
-
-Look at:
-
-false negatives
-model bias
-decision trade-offs
-
-That’s where the real work is.
