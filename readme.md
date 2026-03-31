@@ -4,6 +4,16 @@ A focused deep learning project for detecting pneumonia from chest X-rays, built
 
 ---
 
+## About the Dataset
+
+### Short description
+
+Chest X‑ray images (anterior‑posterior) of pediatric patients used to detect pneumonia. Images were quality‑checked and labeled by expert physicians; evaluation set reviewed by a third expert. This release is a balanced version created by controlled undersampling and augmentation to produce equal class counts.
+
+Original citation
+Kermany, D., et al., Cell 2018. Figure S6 and dataset referenced in the Cell paper. Data mirror: Mendeley
+---
+
 ## ⚡ What this project actually does
 
 This is a **binary image classification system** that answers:
