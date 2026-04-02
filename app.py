@@ -2,10 +2,11 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import tensorflow as tf
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+from tensorflow.keras.applications.efficientnet import preprocess_input
 # Load model
 # model = tf.keras.models.load_model("models/model_efficient")
-model = tf.keras.models.load_model("models/model_mobilenet.keras")
+# model = tf.keras.models.load_model("models/model_mobilenet.keras")
+model = tf.keras.models.load_model("models/model_efficient.keras")
 st.set_page_config(page_title="Pneumonia Detector", layout="centered")
 
 # Title
