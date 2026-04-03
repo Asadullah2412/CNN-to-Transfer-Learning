@@ -92,7 +92,7 @@ if uploaded_file is not None:
         prediction = model.predict(img_array)[0][0]
         response = generate_response(prediction)
 
-        st.markdown("### 🧠 AI Interpretation")
+        st.markdown("### Interpretation")
         st.write(response)
         # Output
         if prediction > 0.6:
