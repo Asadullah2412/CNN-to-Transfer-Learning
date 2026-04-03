@@ -12,8 +12,8 @@ st.set_page_config(page_title="Pneumonia Detector", layout="centered")
 # Title
 st.title("Pneumonia Detection System")
 st.markdown("Upload a chest X-ray image to check for Pneumonia.")
-import sys
-st.write(sys.version)
+# import sys
+# st.write(sys.version)
 import random
 
 pneumonia_high = [
