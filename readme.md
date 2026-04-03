@@ -55,6 +55,9 @@ This project aims to build a model that:
 ## 📊 Model Comparison
 
 ![Project Screenshot](graphs/model_accuracy.png)
+![Project Screenshot](graphs/FN+FP.png)
+![Project Screenshot](graphs/prediction_times.png)
+![Project Screenshot](graphs/tradeoff.png)
 
 ---
 
