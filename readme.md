@@ -2,6 +2,7 @@
 
 An end-to-end deep learning system for detecting pneumonia from chest X-ray images using Convolutional Neural Networks (CNNs) and Transfer Learning. This project focuses on **model comparison, safety-critical evaluation, and real-world deployment**.
 
+project link -> <https://xray-pneumonia-detection.streamlit.app/>
 ---
 
 ## Project Highlights
