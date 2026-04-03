@@ -1,144 +1,162 @@
-# 🫁 Pneumonia Detection — Deep Learning Pipeline
+# Pneumonia Detection using Deep Learning
 
-A focused deep learning project for detecting pneumonia from chest X-rays, built with an emphasis on **model reliability, error analysis, and real-world evaluation**, not just accuracy.
-
----
-
-## About the Dataset
-
-### Short description
-
-Chest X‑ray images (anterior‑posterior) of pediatric patients used to detect pneumonia. Images were quality‑checked and labeled by expert physicians; evaluation set reviewed by a third expert. This release is a balanced version created by controlled undersampling and augmentation to produce equal class counts.
-
-Original citation
-Kermany, D., et al., Cell 2018. Figure S6 and dataset referenced in the Cell paper. Data mirror: Mendeley
-
-*Kaggle link* -> [dataset link](https://www.kaggle.com/datasets/yusufmurtaza01/chest-xray-pneumonia-balanced-dataset/data)
----
-
-## ⚡ What this project actually does
-
-This is a **binary image classification system** that answers:
-
-> “Does this chest X-ray show signs of pneumonia?”
-
-Classes:
-
-- Normal
-- Pneumonia
-
-But more importantly:
-> The system is designed to **not miss pneumonia cases**.
+An end-to-end deep learning system for detecting pneumonia from chest X-ray images using Convolutional Neural Networks (CNNs) and Transfer Learning. This project focuses on **model comparison, safety-critical evaluation, and real-world deployment**.
 
 ---
 
-## 🧠 Why this project matters
+## Project Highlights
 
-In medical ML:
+* Built and compared **5 different models**:
 
-- False Positive → inconvenience  
-- False Negative → **risk to life**
+  * Custom CNN
+  * Transfer Learning:
 
-So this project prioritizes:
-> **High Recall for Pneumonia (zero missed cases)**
+    * VGG16
+    * ResNet50
+    * MobileNetV2
+    * EfficientNetB0
 
----
+* Designed with a **medical-first mindset**:
 
-## 🏗️ Approach (No shortcuts)
+  * Prioritized **Recall (no missed pneumonia cases)**
+  * Analyzed **False Negatives (FN) and False Positives (FP)**
 
-Instead of jumping to pretrained models, the pipeline was built progressively:
+* Deployed using **Streamlit** with:
 
-### 1. Custom CNN (from scratch)
-
-- Learned feature extraction fundamentals  
-- Designed multiple architectures  
-- Compared depth, filters, and regularization  
-
-### 2. Controlled Experiments
-
-- Baseline model  
-- Deeper VGG-style blocks  
-- Regularization (Dropout, BatchNorm)  
-- Epoch sensitivity  
-
-### 3. Evaluation-first mindset
-
-No “accuracy-only” thinking.
+  * Real-time predictions
+  * Confidence scores
+  * Human-like AI responses (LLM-style UX)
 
 ---
 
-## 📊 Results that actually matter
+## Problem Statement
 
-### 🧪 Best Model Performance
+Pneumonia is a potentially life-threatening condition that requires early detection.
+This project aims to build a model that:
 
-- **Accuracy:** 93.3%  
-- **Pneumonia Recall:** **1.00 (no missed cases)**  
-- **ROC-AUC:** 0.98  
-
-Confusion Matrix:
-
-![image](image.png)
-
-### 🔥 Key takeaway
->
-> The model achieves perfect detection of pneumonia cases, with a small trade-off of false positives.
+* Accurately detects pneumonia from X-rays
+* Minimizes **false negatives (critical in healthcare)**
+* Is efficient enough for real-time use
 
 ---
 
-## ⚠️ What failed (and why it matters)
+## 🏗️ Models Explored
 
-Not all models worked.
-
-Some deeper / regularized models:
-
-- Collapsed into predicting “Pneumonia” for most inputs  
-- Achieved perfect recall but terrible specificity  
-
-### Insight
->
-> Increasing complexity **can degrade performance** if not controlled.
+| Model          | Type              | Notes                               |
+| -------------- | ----------------- | ----------------------------------- |
+| Custom CNN     | Scratch           | Baseline model                      |
+| VGG16          | Transfer Learning | High accuracy, heavy                |
+| ResNet50       | Transfer Learning | Deep & stable                       |
+| MobileNetV2    | Transfer Learning | Lightweight, fast                   |
+| EfficientNetB0 | Transfer Learning | Best performance-efficiency balance |
 
 ---
 
-## 🧠 Architecture Philosophy
+## 📊 Model Comparison
 
-Instead of blindly stacking layers, design choices were intentional:
-
-- Increasing filters (32 → 64 → 128 → 256)  
-- GlobalAveragePooling instead of Flatten  
-- BatchNorm for stability  
-- Dropout to control overfitting  
-
-Focus:
-> **Efficient representation > brute force depth**
+[graphs\model_accuracy.png]
 
 ---
 
-## 📦 Minimal Pipeline
+## 🏆 Final Model Selection
 
-Notebooks were avoided for final pipeline → clean modular code.
+**EfficientNetB0** was selected as the final model.
+
+### ✅ Why EfficientNet?
+
+* **0 False Negatives** → No missed pneumonia cases
+* **Highest Accuracy (96%)**
+* **Low False Positives (1)**
+* **Efficient inference time (80 ms)**
+
+> The model achieves the best trade-off between **safety, performance, and efficiency**, making it suitable for real-world deployment.
 
 ---
 
-## 🚀 Run it locally
+## 📈 Evaluation Metrics
+
+The models were evaluated using:
+
+* Accuracy
+* Precision
+* Recall (**primary metric**)
+* F1-score
+* Confusion Matrix (TP, FP, FN, TN)
+* Prediction Time (Latency)
+
+---
+
+## ⚙️ Tech Stack
+
+* Python
+* TensorFlow / Keras
+* NumPy, Pandas
+* Matplotlib
+* Streamlit
+
+---
+
+## 🖥️ Application (Streamlit UI)
+
+Features:
+
+* Upload chest X-ray image
+* Real-time prediction
+* Confidence score display
+* AI-generated interpretation text
+* Clean and minimal UI
+
+---
+
+---
+
+## ▶️ How to Run
+
+### 1. Clone repo
 
 ```bash
 git clone https://github.com/your-username/pneumonia-detection.git
 cd pneumonia-detection
+```
+
+### 2. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
+
+### 3. Run app
+
+```bash
 streamlit run app.py
 ```
 
-## 🧪 Evaluation Strategy
+---
 
-### Metrics used
+## ⚠️ Disclaimer
 
-    Accuracy (baseline reference)
-    Precision (false alarms)
-    Recall (priority metric)
-    F1-score (balance)
-    ROC-AUC (separability)
-    Confusion Matrix (error visibility)
-    Core principle:
+This project is for **educational and research purposes only**.
+It is **not a substitute for professional medical diagnosis**.
 
-“If you miss pneumonia, the model has failed — regardless of accuracy.”
+---
+
+## 🔮 Future Improvements
+
+* Grad-CAM visualization for interpretability
+* Larger and more diverse dataset
+* API deployment (FastAPI / Docker)
+* Model quantization for edge devices
+
+---
+
+## 💡 Key Takeaway
+
+> This project goes beyond model building by focusing on **real-world constraints, safety-critical evaluation, and deployment readiness**.
+
+---
+
+## 📬 Connect
+
+If you found this interesting or have suggestions, feel free to connect!
+
+---
