@@ -110,6 +110,8 @@ Features:
 * AI-generated interpretation text
 * Clean and minimal UI
 
+![Project Screenshot](result.png)
+
 ---
 
 ---
