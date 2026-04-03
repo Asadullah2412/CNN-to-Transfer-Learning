@@ -54,7 +54,7 @@ This project aims to build a model that:
 
 ## 📊 Model Comparison
 
-![](model_accuracy.png.png "Title")
+![Project Screenshot](graphs/model_accuracy.png)
 
 ---
 
